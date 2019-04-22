@@ -1,0 +1,10 @@
+<div class="outerPanel">
+  <div class="outerButton">
+    <button mat-icon-button cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="onOpenClose()">
+      <mat-icon>calendar_today</mat-icon>
+    </button>
+  </div>
+  <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isopen">
+    <app-calendarsearchover (selectreservation)="onReservationSelected($event)"></app-calendarsearchover>
+  </ng-template>
+</div>

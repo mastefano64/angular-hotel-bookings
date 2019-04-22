@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ title }} reservation</h2>
+
+<form class="form-container100 popup" (ngSubmit)="onConfirm(f)" #f="ngForm">
+  <mat-dialog-content>
+    <div *ngIf="booking.bookingId !== 0">
+      N. reservation {{ booking.bookingId }}
+      <br><br>
+    </div>
+    <mat-form-field>
+      <mat-select name="roomid" placeholder="-- room --" [ngModel]="roomid">
+        <mat-option *ngFor="let room of rooms" [value]="room.roomId">
+          {{ room.roomNumber }} {{ room.typeName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>  
+    <mat-form-field>
+      <mat-datepicker #picker1></mat-datepicker>
+      <input matInput [matDatepicker]="picker1" name="startDate" placeholder="Start" [ngModel]="startDate" readonly>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-datepicker #picker2></mat-datepicker>
+      <input matInput [matDatepicker]="picker2" name="endDate" placeholder="End" [ngModel]="endDate" readonly>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="name" placeholder="name" [ngModel]="booking.name" required>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <div class="btnDelete" *ngIf="booking.bookingId !== 0">
+      <button mat-raised-button color="primary" type="button" (click)="onDelete()">Delete</button>
+    </div>
+    <button mat-raised-button color="primary" [disabled]="f.invalid">Save</button>    
+    <button mat-raised-button type="button" (click)="onClose()">Cancel</button>
+  </mat-dialog-actions>
+</form>

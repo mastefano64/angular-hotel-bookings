@@ -1,0 +1,48 @@
+<div>
+
+  <div>
+    <app-calendarnavbar 
+      [day]="day"
+      [month]="month"
+      [year]="year"
+      [statusbar]="statusbar"
+      [manager]="manager"
+      (changedays)="onDaysChanged($event)">
+    </app-calendarnavbar>
+  </div>
+
+  <div>
+    <table class="tabreservation"> 
+      <tr class="head">
+        <td class="headEmpty"></td>
+        <td class="headDaysA" *ngFor="let month of headerdays.months" [attr.colspan]="month.days"> 
+          {{ month.monthName }}
+        </td>
+      </tr>
+      <tr class="head">
+        <td class="headEmpty"></td>
+        <td class="headDaysB" *ngFor="let dd of headerdays.headDays1"> 
+          {{ dd.day }}
+        </td>
+        <td class="headDaysB" *ngFor="let dd of headerdays.headDays2"> 
+          {{ dd.day }}
+        </td>
+      </tr>
+      <tr class="rows" *ngFor="let room of rooms">
+        <td class="rowRooms">
+          {{ room.roomNumber }}/{{ room.roomTypeName }}
+        </td>
+        <td *ngFor="let dd of headerdays.headDaysAll">
+          <app-reservation 
+            [room]="room" 
+            [day]="dd" 
+            [bookings]="bookings"
+            (changestatusbar)="onStatusbarChanged($event)"
+            (reservation)="onDayReservation($event)">
+          </app-reservation>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

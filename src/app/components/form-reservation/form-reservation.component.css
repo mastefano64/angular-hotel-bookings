@@ -1,0 +1,8 @@
+
+.btnDelete {
+    display: inline-block;
+}
+
+mat-dialog-actions button {
+    margin: 0px 4px 0px 4px;
+}

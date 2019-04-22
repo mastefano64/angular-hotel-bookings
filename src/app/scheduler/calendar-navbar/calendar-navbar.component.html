@@ -1,0 +1,39 @@
+<div>
+  <div class="containerNavigationBar">
+    <div class="panelNavigationBar">
+      <div class="panelSearch">
+        <app-calendarsearchbtn (selectreservation)="onReservationSelected($event)"></app-calendarsearchbtn>
+      </div>
+      <div class="panelDatePicker">
+        <button mat-icon-button (click)="picker.open()">
+          <mat-icon>calendar_today</mat-icon>
+        </button>
+        <mat-datepicker #picker></mat-datepicker>
+        <input matInput [matDatepicker]="picker" name="datpicker" [ngModel]="datpicker"
+                   [hidden]="'true'" (dateChange)="onPickerChange($event)">        
+      </div>
+      &nbsp;
+      <mat-form-field>
+        <mat-select name="roomtype" [ngModel]="roomtype" (selectionChange)="onRoomChange($event)">
+          <mat-option value="0">-- All room --</mat-option>
+          <mat-option value="1">Single</mat-option>
+          <mat-option value="2">Double</mat-option>
+          <mat-option value="3">Triple</mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;
+      <button mat-raised-button color="primary" (click)="onPrev15Day()">15 gg precedenti</button>&nbsp;
+      <button mat-raised-button color="primary" (click)="onNext15Day()">15 gg successivi</button>&nbsp;
+      <button mat-raised-button color="primary" (click)="onPrevMonth()">Mese precedente</button>&nbsp;
+      <button mat-raised-button color="primary" (click)="onNextMonth()">Mese successivo</button>&nbsp;
+    </div>
+  </div>
+  <div class="containerStatusbar">
+    {{ currvalues?.dayWeekName }} {{ currvalues?.day }} {{ currvalues?.monthName }} {{ currvalues?.year }}
+    <div class="panelStatusbar" *ngIf="statusbar">
+      &nbsp;-&nbsp;&nbsp;Reservation:
+      {{ statusbar.startDate | date: 'dd-MM-yyyy' }} / {{ statusbar.endDate | date: 'dd-MM-yyyy' }}&nbsp;
+      {{ statusbar.name }}&nbsp;
+    </div>    
+  </div>
+</div>

@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: -10px 0px 0px 0px; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.mytoolbar {
+  width: 100%;
+  height: 60px;
+  background-color: #3f51b5;
+  color: #ffffff;
+  z-index: 1500;
+}
+
+.mytoolbartitle {
+  padding-top: 20px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.form-container100 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+  .form-container100 > * {
+    width: 100%;
+  }
+
+.form-container50 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+  .form-container50 > * {
+    width: 100%;
+  }
+
+  .popup mat-form-field {
+    display: block;
+  }

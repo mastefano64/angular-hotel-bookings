@@ -1,0 +1,40 @@
+
+.reservedBox {
+    position: relative;
+    height: 19px;
+}
+
+.reservedBoxBg {
+    position: absolute;
+    width: 36px;
+    padding-top: 4px;
+    font-size: 12px;
+}
+
+:host-context(tr.rows:not(:hover)) .reservedBoxBg { 
+    display: none;
+} 
+
+:host-context(tr.rows:hover) .reservedBoxBg { 
+    display: block;
+} 
+
+.reservedBoxCx {  
+    background-color: brown;
+}
+
+.reservedBoxSx {
+    width: 12px;
+    float: left;
+    background-color: brown;
+}
+
+.reservedBoxDx {
+    width: 12px;
+    float: right;
+    background-color: brown;
+}
+
+.clearfix {
+    clear: both;
+}

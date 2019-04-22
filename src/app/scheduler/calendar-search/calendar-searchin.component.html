@@ -1,0 +1,52 @@
+<div class="innerPanel">  
+  <div>
+    <mat-form-field>
+      <mat-select name="years" [ngModel]="years" (selectionChange)="onYearsChange($event)">
+        <mat-option value="0">-- All years --</mat-option>
+        <mat-option value="2018">2018</mat-option>
+        <mat-option value="2019">2019</mat-option>
+        <mat-option value="2020">2020</mat-option>
+      </mat-select>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <mat-select name="months" [ngModel]="months" (selectionChange)="onMonthsChange($event)">
+        <mat-option value="0">-- All months --</mat-option>
+        <mat-option value="1">January</mat-option>
+        <mat-option value="2">February</mat-option>
+        <mat-option value="3">March</mat-option>
+        <mat-option value="4">April</mat-option>
+        <mat-option value="5">May</mat-option>
+        <mat-option value="6">June</mat-option>
+        <mat-option value="7">July</mat-option>
+        <mat-option value="8">August</mat-option>
+        <mat-option value="9">September</mat-option>
+        <mat-option value="10">October</mat-option>
+        <mat-option value="11">November</mat-option>
+        <mat-option value="12">December</mat-option>
+      </mat-select>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <input matInput placeholder="name" #fastsearch>
+    </mat-form-field>
+  </div> 
+  <div>
+    <table>
+      <tr class="head">
+        <td>Id</td>
+        <td>Room</td>
+        <td>Start</td>
+        <td>End</td>
+        <td>Name</td>
+      </tr>
+      <tr class="rows" *ngFor="let person of persons$ | async" (click)="onSelect(person)">
+        <td class="tdId">{{ person.bookingId }}</td>
+        <td class="tdRoom">{{ person.roomNumber }} {{ person.roomTypeName }}</td>
+        <td class="tdDate">{{ person.startDate | date: 'dd/MM/yyyy' }}</td>
+        <td class="tdDate">{{ person.endDate | date: 'dd/MM/yyyy' }}</td>
+        <td class="tdName">{{ person.name }}</td>
+      </tr>
+    </table>
+  </div>  
+</div>

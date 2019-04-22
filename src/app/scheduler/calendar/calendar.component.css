@@ -1,0 +1,59 @@
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+table.tabreservation {
+  margin-top: 20px;
+} 
+
+tr.head .headEmpty {
+  width: 120px;
+}
+
+tr.head .headDaysA {
+  height: 46px;
+  font-size: 16px;
+}
+
+tr.head .headDaysB {
+  height: 30px;
+  font-size: 14px;
+}
+
+tr.head td {
+  width: 30px;
+  text-align: center;
+  border: solid lightgray 1px;
+}
+
+tr.rows .rowRooms {
+  width: 120px;
+  font-size: 12px;
+}
+
+tr.rows {
+  height: 30px;
+}
+
+tr.rows:hover {
+  background-color: #e0e0e0;
+}
+
+tr.rows td {
+  width: 30px;
+  text-align: center;
+  border: solid lightgray 1px;
+}
+
+  th:first-child, td:first-child {
+    padding-left: 2px;
+  }
+
+  th:last-child, td:last-child {
+    padding-right: 2px;
+  }
+
+  .rows span {
+    font-size: 13px;
+  }    

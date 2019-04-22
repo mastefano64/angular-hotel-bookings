@@ -1,0 +1,58 @@
+
+.innerPanel {
+  width: 700px;
+  height: 350px;
+  margin: 5px;
+  padding: 5px;
+  background-color: #FCFCFC;
+  border: 1px solid #000000;
+  overflow: auto;
+}
+
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+tr.head td {
+  text-align: center;
+  border: solid lightgray 1px;
+}
+
+tr.rows:hover {
+  background-color: #e0e0e0;
+}
+
+tr.rows td {
+  text-align: center;
+  border: solid lightgray 1px;
+  font-size: 16px;
+}
+
+  th:first-child, td:first-child {
+    padding-left: 2px;
+  }
+
+  th:last-child, td:last-child {
+    padding-right: 2px;
+  }
+
+  .tdId {
+    width: 55px;
+  }
+
+  .tdRoom {
+    width: 110px;
+    text-align: left;
+    padding-left: 14px;
+  }
+
+  .tdDate {
+    width: 100px;
+  }
+
+  .tdName {
+    width: auto;
+    text-align: left !important;
+    padding-left: 4px;
+  }

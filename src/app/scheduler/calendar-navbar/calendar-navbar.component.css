@@ -1,0 +1,29 @@
+
+.containerNavigationBarh {
+    display: flex;
+}
+
+.panelNavigationBar {
+    flex: 1 1 auto;
+}
+
+.panelSearch {
+    display: inline-block;
+}
+
+.panelDatePicker {
+    display: inline-block;
+}
+
+.mat-datepicker-popup {
+    position: relative;
+    top: 110px
+} 
+
+.containerStatusbar {
+    height: 20px;
+}
+
+.panelStatusbar {
+    display: inline-block;
+}
